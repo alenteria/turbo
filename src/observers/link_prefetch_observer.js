@@ -88,7 +88,7 @@ export class LinkPrefetchObserver {
   }
 
   #cancelPrefetchRequest = () => {
-    prefetchCache.clear()
+    // prefetchCache.clear()
     this.#prefetchedLink = null
   }
 
@@ -120,17 +120,17 @@ export class LinkPrefetchObserver {
 
   // Fetch request interface
 
-  requestSucceededWithResponse() {}
+  requestSucceededWithResponse() { }
 
-  requestStarted(fetchRequest) {}
+  requestStarted(fetchRequest) { }
 
-  requestErrored(fetchRequest) {}
+  requestErrored(fetchRequest) { }
 
-  requestFinished(fetchRequest) {}
+  requestFinished(fetchRequest) { }
 
-  requestPreventedHandlingResponse(fetchRequest, fetchResponse) {}
+  requestPreventedHandlingResponse(fetchRequest, fetchResponse) { }
 
-  requestFailedWithResponse(fetchRequest, fetchResponse) {}
+  requestFailedWithResponse(fetchRequest, fetchResponse) { }
 
   get #cacheTtl() {
     return Number(getMetaContent("turbo-prefetch-cache-time")) || cacheTtl
