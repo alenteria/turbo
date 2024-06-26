@@ -103,6 +103,7 @@ export class LinkPrefetchObserver {
       if (cached) {
         // User clicked link, use cache response
         event.detail.fetchRequest = cached
+        return
       }
 
       prefetchCache.clear()
