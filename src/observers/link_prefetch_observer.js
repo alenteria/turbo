@@ -48,10 +48,10 @@ export class LinkPrefetchObserver {
       capture: true,
       passive: true
     })
-    this.eventTarget.addEventListener("mouseleave", this.#cancelRequestIfObsolete, {
-      capture: true,
-      passive: true
-    })
+    // this.eventTarget.addEventListener("mouseleave", this.#cancelRequestIfObsolete, {
+    //   capture: true,
+    //   passive: true
+    // })
 
     this.eventTarget.addEventListener("turbo:before-fetch-request", this.#tryToUsePrefetchedRequest, true)
     this.started = true
@@ -88,7 +88,7 @@ export class LinkPrefetchObserver {
   }
 
   #cancelPrefetchRequest = () => {
-    // prefetchCache.clear()
+    prefetchCache.clear()
     this.#prefetchedLink = null
   }
 
