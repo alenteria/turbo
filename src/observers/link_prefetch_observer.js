@@ -68,6 +68,10 @@ export class LinkPrefetchObserver {
       const location = getLocationForLink(link)
 
       if (this.delegate.canPrefetchRequestToLocation(link, location)) {
+        if (prefetchCache.get(location.href)) {
+          return;
+        }
+
         this.#prefetchedLink = link
 
         const fetchRequest = new FetchRequest(
